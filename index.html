@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="ToddlerBot: Open-Source ML-Compatible Humanoid Platform for Loco-Manipulation.">
+  <meta name="keywords" content="Humanoid Robot, Loco-Manipulation, Open-Source, ML-Compatible Hardware">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ToddlerBot: Open-Source ML-Compatible Humanoid Platform for Loco-Manipulation</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X5PKXGWYVL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-X5PKXGWYVL');
+  </script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">ToddlerBot: Open-Source ML-Compatible Humanoid Platform for
+              Loco-Manipulation</h1>
+            <div class="is-size-5 publication-authors">
+              <i>Arxiv, 2025</i>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://hshi74.github.io">Haochen Shi</a><sup>*</sup>,</span>
+              <span class="author-block">
+                <a href="http://me.weizhuowang.com/">Weizhuo Wang</a><sup>*</sup>,</span>
+              <span class="author-block">
+                <a href="https://shurans.github.io/">Shuran Song</a><sup>†</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://tml.stanford.edu/people/karen-liu">C. Karen Liu</a><sup>†</sup>,
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>*</sup>Equal contribution,</span>
+              <span class="author-block"><sup>†</sup>Equal advising</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Stanford University</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <span class="link-block">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/hshi74/toddlerbot"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- X Link. -->
+                <span class="link-block">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fa-brands fa-x-twitter"></i>
+                    </span>
+                    <span>Tweet</span>
+                  </a>
+                </span>
+                <!-- Doc Link. -->
+                <span class="link-block">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="far fa-file-alt"></i>
+                    </span>
+                    <span>Doc</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/teaser.mp4" type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          RoboCraft shapes elasto-plastic objects into various 3D target shapes in the real
+          world.
+        </h2>
+      </div>
+    </div>
+  </section> -->
+
+  <section class="hero">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <!-- <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Learning-based robotics research driven by data demands a new approach to robot hardware design—one that
+              serves as both a platform for policy execution and a tool for embodied data collection to train policies.
+              We introduce ToddlerBot, a low-cost, open-source humanoid robot platform designed for scalable policy
+              learning and research in robotics and AI. ToddlerBot enables seamless acquisition of high-quality
+              simulation and real-world data. The plug-and-play zero-point calibration and transferable motor system
+              identification ensure a high-fidelity digital twin, enabling zero-shot policy transfer from simulation to
+              the real-world. A user-friendly teleoperation interface facilitates streamlined real-world data collection
+              for learning motor skills from human demonstrations. Utilizing its data collection ability and
+              anthropomorphic design, ToddlerBot is an ideal platform to perform whole-body loco-manipulation.
+              Additionally, ToddlerBot's compact size (0.56m, 3.4kg) ensures safe operation in real-world environments.
+              Reproducibility is achieved with an entirely 3D-printed, open-source design and commercially available
+              components, keeping the total cost under 6,000 USD. Comprehensive documentation allows assembly and
+              maintenance with basic technical expertise, as validated by a successful independent replication of the
+              system. We demonstrate ToddlerBot's capabilities through arm span, payload, endurance tests,
+              loco-manipulation tasks, and a collaborative long-horizon scenario where two robots tidy a toy session
+              together. By advancing ML-compatibility, capability, and reproducibility, ToddlerBot provides a robust
+              platform for scalable learning and dynamic policy execution in robotics research.
+            </p>
+          </div>
+        </div>
+      </div> -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <div class="content has-text-left">
+            <p>
+              <strong>TL;DR: ToddlerBot is a low-cost, open-source humanoid robot platform designed for
+                scalable policy learning and research in robotics and AI.</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+      <!-- Paper video. -->
+      <!-- <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Video</h2>
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/o2LPhcZRtSo?rel=0&amp;showinfo=0" frameborder="0"
+              allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div> -->
+      <!--/ Paper video. -->
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Design</h2>
+          <div class="content has-text-left">
+            <p>
+              We present ToddleBot's mechatronic design in the figure below. We highlight ToddlerBot's 30
+              active DoFs with orange markers: 7 DoFs per arm, 6 DoFs per leg, a 2-DoF neck, and a 2-DoF waist. Green
+              markers indicate two end-effector designs—a compliant palm and a parallel-jaw gripper. Purple markers
+              denote the sensor and electronics layout with exploded views, featuring two fisheye cameras, a speaker,
+              two microphones, an IMU, and a Jetson Orin NX computer.
+            </p>
+          </div>
+          <div class="content has-text-centered">
+            <div class="column">
+              <img src="./static/images/design.png" alt="Mechatronic Design." />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column is-full-width has-text-centered">
+          <h2 class="title is-3">Results</h2>
+          <div class="content has-text-center">
+            <p>
+              <strong><em>1x Speed unless otherwise noted.</em></strong>
+            </p>
+          </div>
+
+          <h3 class="title is-4">Capability: Arm Span, Payload, and Endurance</h3>
+          <div class="columns is-centered">
+            <div class="column ">
+              <div class="publication-video ">
+                <video id="size" playsinline height="100%" controls>
+                  <source src="./static/videos/size.mp4" type="video/mp4">
+                </video>
+              </div>
+              </br>
+              <div class="content has-text-left">
+                <p>
+                  <strong>Arm Span Test:</strong> With a torso volume of 13x9x12 cm³, ToddlerBot
+                  successfully grasps objects 14 times its torso volume (27x24x31 cm³) using its compliant palm
+                  gripper.
+                </p>
+              </div>
+            </div>
+            <div class="column ">
+              <div class="publication-video ">
+                <video id="payload" playsinline height="100%" controls>
+                  <source src="./static/videos/payload.mp4" type="video/mp4">
+                </video>
+              </div>
+              </br>
+              <div class="content has-text-left">
+                <p>
+                  <strong>Payload Test:</strong> ToddlerBot lifts 1,484 g (40% of its total weight) while
+                  maintaining balance. To determine the limit, screws are incrementally added to a 3D-printed gripping
+                  cup until it falls.
+                </p>
+              </div>
+            </div>
+            <div class="column ">
+              <div class="publication-video ">
+                <video id="endurance" playsinline height="100%" controls>
+                  <source src="./static/videos/endurance_repair.mp4" type="video/mp4">
+                </video>
+              </div>
+              </br>
+              <div class="content has-text-left">
+                <p>
+                  <strong>Endurance Test:</strong> Running a walking RL policy, ToddlerBot lasts 19 minutes before
+                  overheating affects stability. It withstands up to 7 falls before breaking, but repairs take only 21
+                  minutes of 3D printing and 14 minutes of assembly for full restoration.
+                </p>
+              </div>
+            </div>
+          </div>
+          <br />
+
+          <h3 class="title is-4">Capability: Conversation, Push-ups, and Pull-ups</h3>
+          <div class="columns is-centered">
+            <div class="column ">
+              <div class="publication-video ">
+                <video id="language" playsinline height="100%" controls>
+                  <source src="./static/videos/language.mp4" type="video/mp4">
+                </video>
+              </div>
+              </br>
+              <div class="content has-text-left">
+                <p>
+                  <strong>Conversation and Push-ups:</strong> This is achieved by integrating OpenAI’s Realtime API with
+                  GPT-4o for speech-to-text and text-to-speech. Push-ups are zero-shot sim-to-real transfer of open-loop
+                  keyframe animation.
+                </p>
+              </div>
+            </div>
+            <div class="column ">
+              <div class="publication-video ">
+                <video id="pull_up" playsinline height="100%" controls>
+                  <source src="./static/videos/pull_up.mp4" type="video/mp4">
+                </video>
+              </div>
+              </br>
+              <div class="content has-text-left">
+                <p>
+                  <strong>Pull-ups:</strong> We use an AprilTag to help ToddlerBot accurately locate the horizontal
+                  bar. The rest is a zero-shot sim-to-real transfer of open-loop keyframe animation.
+                </p>
+              </div>
+            </div>
+          </div>
+          <br />
+
+          <h3 class="title is-4">ML-Compatibility: Locomotion and Manipulation</h3>
+          <div class="columns is-centered">
+            <div class="column ">
+              <div class="publication-video ">
+                <video id="walk" playsinline height="100%" controls>
+                  <source src="./static/videos/walk.mp4" type="video/mp4">
+                </video>
+              </div>
+              </br>
+              <div class="content has-text-left">
+                <p>
+                  <strong>Omnidirectional Walking:</strong> ToddlerBot achieves omnidirectional walking with RL and
+                  zero-shot sim-to-real.
+                </p>
+              </div>
+            </div>
+            <div class="column ">
+              <div class="publication-video ">
+                <video id="hug" playsinline height="100%" controls>
+                  <source src="./static/videos/hug.mp4" type="video/mp4">
+                </video>
+              </div>
+              </br>
+              <div class="content has-text-left">
+                <p>
+                  <strong>Bimanual Manipulation:</strong> This is an RGB-based diffusion policy trained with 60
+                  demonstrations.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="columns is-centered">
+            <div class="column ">
+              <div class="publication-video ">
+                <video id="pick" playsinline height="100%" controls>
+                  <source src="./static/videos/pick.mp4" type="video/mp4">
+                </video>
+              </div>
+              </br>
+              <div class="content has-text-left">
+                <p>
+                  <strong>Full-body Manipulation:</strong> This is also an RGB-based diffusion policy trained with 60
+                  demonstrations.
+                </p>
+              </div>
+            </div>
+            <div class="column ">
+              <div class="publication-video ">
+                <video id="push_cart" playsinline height="100%" controls>
+                  <source src="./static/videos/push_cart.mp4" type="video/mp4">
+                </video>
+              </div>
+              </br>
+              <div class="content has-text-left">
+                <p>
+                  <strong>Skill Chaining:</strong> ToddlerBot first executes a diffusion policy to grasp the handle,
+                  while maintaining that pose, switched to the RL policy to push the wagon forward.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="title is-4">Reproducibility: Hardware and Policies</h3>
+          <div class="columns is-centered">
+            <div class="column ">
+              <div class="publication-video ">
+                <video id="hug_transfer" playsinline height="100%" controls>
+                  <source src="./static/videos/hug_transfer.mp4" type="video/mp4">
+                </video>
+              </div>
+              </br>
+              <div class="content has-text-left">
+                <p>
+                  <strong>Manipulation Policy Zero-Shot Transfer:</strong> We successfully transfer manipulation policy
+                  trained with data collected on Toddlerbot instance to another.
+                </p>
+              </div>
+            </div>
+            <div class="column ">
+              <div class="publication-video ">
+                <video id="collaborate" playsinline height="100%" controls>
+                  <source src="./static/videos/collaborate.mp4" type="video/mp4">
+                </video>
+              </div>
+              </br>
+              <div class="content has-text-left">
+                <p>
+                  <strong>Two-Instance Collaboration Task:</strong> To demonstrate their equivalent performance of two
+                  Toddlerbot Instances, both robots collaborate on a long-horizon room tidying task.
+                </p>
+              </div>
+            </div>
+            <div class="column ">
+              <div class="publication-video ">
+                <video id="assembly" playsinline height="100%" controls>
+                  <source src="./static/videos/assembly_1000x.mp4" type="video/mp4">
+                </video>
+              </div>
+              </br>
+              <div class="content has-text-left">
+                <p>
+                  <strong>Easy-to-Build Test:</strong> We show that ToddlerBot is easy to build with fully
+                  open-source assembly manuals and videos.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="section" id="Community">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Join Our Community</h2>
+      <p>Complete the CAPTCHA to reveal the invite links.</p>
+
+      <div class="g-recaptcha" data-sitekey="6LcGMcoqAAAAADle-Fsc00C_GfmUdG4_vyoxXGjP" data-callback="showLinks"></div>
+
+      <div id="invite-links">
+        <p><strong>Discord Invite (if English is the preferred language):</strong> <a
+            href="https://discord.gg/t6rAeHejkV" target="_blank">Join Here</a>
+        </p>
+        <p><strong>WeChat Invite (if Chinese if the preferred language):</strong>
+          <img id="wechat-qr" src="./static/images/wechat_qr.png" alt="WeChat QR Code"
+            style="max-width: 300px; display: block;">
+        </p>
+      </div>
+
+      <script>
+        function showLinks() {
+          document.getElementById("invite-links").style.display = "block";
+        }
+      </script>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>Test</code></pre>
+    </div>
+  </section>
+
+  <section class="section" id="Acknowledgement">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Acknowledgement</h2>
+      <p>The authors would like to express their gratitude to Kaizhe Hu for assembling the second instance of ToddlerBot
+        and assisting with keyframe animation and demo recording. We also extend our thanks to Huy Ha, Yen-Jen Wang, Pei
+        Xu, and Yifan Hou for their insightful discussions on locomotion, and to Sirui Chen, Chen Wang, and Yunfan Jiang
+        for valuable input on manipulation policy deployment.
+        We are grateful to Albert Wu for his guidance on mathematical formulation and notation. Additionally, we thank
+        Jo&atilde;o Pedro Ara&uacute;jo for his assistance with the motion capture system.
+        Finally, we appreciate the helpful discussions from all members of TML and REALab. This work was supported by
+        National Science Foundation NSF-FRR-2153854, NSF-2143601, NSF-2037101, Sloan Fellowship, Stanford Institute for
+        Human-Centered Artificial Intelligence, and Stanford Wu Tsai Human Performance Alliance.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <!-- <div class="content has-text-centered">
+        <a class="icon-link" href="./static/videos/nerfies_paper.pdf">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div> -->
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content has-text-centered">
+            <!-- <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              This means you are free to borrow the <a href="https://github.com/nerfies/nerfies.github.io">source
+                code</a> of this website,
+              we just ask that you link back to this page in the footer.
+              Please remember to remove the analytics code included in the header of the website which
+              you do not want on your website.
+            </p>
+          </div> -->
+            <p>
+              Website template by <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+  </footer>
+
+</body>
+
+</html>
