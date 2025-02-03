@@ -428,21 +428,28 @@
       <h2 class="title">Join Our Community</h2>
       <p>Complete the CAPTCHA to reveal the invite links.</p>
 
-      <div class="g-recaptcha" data-sitekey="6LcGMcoqAAAAADle-Fsc00C_GfmUdG4_vyoxXGjP" data-callback="showLinks"></div>
+      <!-- reCAPTCHA with an expiration callback -->
+      <div class="g-recaptcha" data-sitekey="6LcGMcoqAAAAADle-Fsc00C_GfmUdG4_vyoxXGjP" data-callback="showLinks"
+        data-expired-callback="hideLinks"></div>
 
-      <div id="invite-links">
-        <p><strong>Discord Invite (if English is the preferred language):</strong> <a
-            href="https://discord.gg/t6rAeHejkV" target="_blank">Join Here</a>
+      <!-- Invite Links (Hidden Initially) -->
+      <div id="invite-links" style="display: none;">
+        <p><strong>Discord Invite (if English is the preferred language):</strong>
+          <a href="https://discord.gg/t6rAeHejkV" target="_blank">Join Here</a>
         </p>
-        <p><strong>WeChat Invite (if Chinese if the preferred language):</strong>
-          <img id="wechat-qr" src="./static/images/wechat_qr.png" alt="WeChat QR Code"
-            style="max-width: 300px; display: block;">
-        </p>
+        <p><strong>WeChat Invite (if Chinese is the preferred language):</strong></p>
+        <img id="wechat-qr" src="./static/images/wechat.jpg" alt="WeChat QR Code"
+          style="max-width: 300px; display: block;">
       </div>
 
+      <!-- JavaScript to Show/Hide Links -->
       <script>
         function showLinks() {
           document.getElementById("invite-links").style.display = "block";
+        }
+
+        function hideLinks() {
+          document.getElementById("invite-links").style.display = "none";
         }
       </script>
     </div>
