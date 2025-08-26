@@ -119,6 +119,16 @@
                     <span>Docs</span>
                   </a>
                 </span>
+                <!-- BOM Link. -->
+                <span class="link-block">
+                  <a href="https://docs.google.com/spreadsheets/d/12MPpu1rRBogICvM5LNRhUcev6Mb_HHuyf8a1decOBxA/edit?usp=sharing"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="far fa-list-alt"></i>
+                    </span>
+                    <span>BOM</span>
+                  </a>
+                </span>
               </div>
             </div>
           </div>
@@ -170,16 +180,16 @@
           </div>
         </div>
       </div> -->
-  <!-- <div class="columns is-centered has-text-centered">
-        <div class="column is-full-width">
-          <div class="content has-text-left">
-            <p>
-              <strong>TL;DR: ToddlerBot is a low-cost, open-source humanoid robot platform designed for
-                scalable policy learning and research in robotics and AI.</strong>
-            </p>
-          </div>
-        </div>
-      </div> -->
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-full-width">
+      <div class="content has-text-centered">
+        <p>
+          <strong>TL;DR: ToddlerBot is a low-cost, open-source humanoid robot platform designed for
+            scalable policy learning and research in robotics and AI.</strong>
+        </p>
+      </div>
+    </div>
+  </div>
   <!--/ Abstract. -->
 
   <!-- Paper video. -->
@@ -198,6 +208,115 @@
 
   <section class="section">
     <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width has-text-centered">
+          <h2 class="title is-3">2.0 Release</h2>
+          <div class="content has-text-center">
+            <p>
+              <strong><em>See <a href=https://github.com/hshi74/toddlerbot/blob/main/CHANGELOG.md>CHANGELOG.md</a> for
+                  details. 1x Speed unless otherwise noted.</em></strong>
+            </p>
+          </div>
+
+          <h3 class="title is-4">New Capabilities</h3>
+          <div class="columns is-centered">
+            <div class="column ">
+              <div class="publication-video ">
+                <video id="cartwheel" playsinline height="100%" controls>
+                  <source src="./static/videos/cartwheel.mp4" type="video/mp4">
+                </video>
+              </div>
+              </br>
+              <div class="content has-text-left">
+                <p>
+                  <strong>Cartwheel:</strong> Toddy successfully performs a highly dynamic cartwheel, showcasing its
+                  agility and balance capabilities.
+                </p>
+              </div>
+            </div>
+            <div class="column ">
+              <div class="publication-video ">
+                <video id="failuers" playsinline height="100%" controls>
+                  <source src="./static/videos/cartwheel_failures.mp4" type="video/mp4">
+                </video>
+              </div>
+              </br>
+              <div class="content has-text-left">
+                <p>
+                  <strong>Cartwheel Failures:</strong> With naive <a
+                    href="https://xbpeng.github.io/projects/DeepMimic/index.html">DeepMimic</a> and domain
+                  randomization,
+                  the success rate is still low. But the good news is that Toddy is extremely robust—it almost never
+                  breaks. Even if it breaks, it is super easy to fix.
+                </p>
+              </div>
+            </div>
+            <div class="column ">
+              <div class="publication-video ">
+                <video id="crawl" playsinline height="100%" controls>
+                  <source src="./static/videos/crawl.mp4" type="video/mp4">
+                </video>
+              </div>
+              </br>
+              <div class="content has-text-left">
+                <p>
+                  <strong>Crawling:</strong> Toddy can crawl like a toddler, using its arms and legs in a
+                  coordinated manner.
+                </p>
+              </div>
+            </div>
+          </div>
+          <br />
+
+          <div class="columns is-centered">
+            <div class="column ">
+              <div class="publication-video ">
+                <video id="language" playsinline height="100%" controls>
+                  <source src="./static/videos/walk_faster.mp4" type="video/mp4">
+                </video>
+              </div>
+              </br>
+              <div class="content has-text-left">
+                <p>
+                  <strong>Walking Faster:</strong> Toddy can walk faster in all directions (up to 0.25m/s) and rotate
+                  faster in place (up to 1 rad/s).
+                </p>
+              </div>
+            </div>
+            <div class="column ">
+              <div class="publication-video ">
+                <video id="pull_up" playsinline height="100%" controls>
+                  <source src="./static/videos/vr_teleop.mp4" type="video/mp4">
+                </video>
+              </div>
+              </br>
+              <div class="content has-text-left">
+                <p>
+                  <strong>VR Teleoperation:</strong> Real-time VR teleoperation with Meta quest 2.
+                </p>
+              </div>
+            </div>
+            <div class="column ">
+              <div class="publication-video ">
+                <video id="depth" playsinline height="100%" controls>
+                  <source src="./static/videos/depth.mp4" type="video/mp4">
+                </video>
+              </div>
+              </br>
+              <div class="content has-text-left">
+                <p>
+                  <strong>Foundation Stereo Depth</strong> On-board (Jetson Orin NX 16GB) real-time (10Hz) depth
+                  estimation from stereo fisheye cameras with <a
+                    href="https://github.com/NVlabs/FoundationStereo">Foundation
+                    Stereo</a>.
+                </p>
+              </div>
+            </div>
+          </div>
+          <br />
+        </div>
+      </div>
+
       <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
           <h2 class="title is-3">Design</h2>
@@ -288,9 +407,9 @@
               </br>
               <div class="content has-text-left">
                 <p>
-                  <strong>Conversation and Push-ups:</strong> This is achieved by integrating OpenAI’s Realtime API with
-                  GPT-4o for speech-to-text and text-to-speech. Push-ups are zero-shot sim-to-real transfer of open-loop
-                  keyframe animation.
+                  <strong>Conversation and Push-ups:</strong> This is achieved by integrating OpenAI's Realtime API
+                  with GPT-4o for speech-to-text and text-to-speech. Push-ups are zero-shot sim-to-real transfer of
+                  open-loop keyframe animation.
                 </p>
               </div>
             </div>
@@ -384,8 +503,8 @@
               </br>
               <div class="content has-text-left">
                 <p>
-                  <strong>Manipulation Policy Zero-Shot Transfer:</strong> We successfully transfer manipulation policy
-                  trained with data collected on Toddlerbot instance to another.
+                  <strong>Manipulation Policy Zero-Shot Transfer:</strong> We successfully transfer manipulation
+                  policy trained with data collected on Toddlerbot instance to another.
                 </p>
               </div>
             </div>
